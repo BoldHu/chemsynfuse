@@ -36,5 +36,3 @@ Feature dictionaries contain `values`, `states`, `available`, and `categories` s
 Molecular features come from a frozen `MolecularPretrainer.encode()` using externally supplied pretrained weights and token IDs. Padding/BOS/EOS IDs are 0/3/2. `pretraining_step` accepts two tokenized molecular views and reconstruction targets.
 
 For regression, set `kind="regression"` and pass a `RegressionNeighborhoods` instance to `Trainer`, initialized with source-training-only `mean`, `scale`, `anchors`, `bandwidth`, `minimum`, and `maximum`. The supervised objective is twice the Huber loss on standardized residuals; classification uses ordinary cross-entropy. `Trainer.fit` selects EMA weights using source-validation macro-F1 or RMSE. Its probe callback calls `update_omega` on original source-training and unlabeled target-adaptation features with group identifiers. Target evaluation samples are not training inputs.
-
-This repository contains the core model and tensor-level training API. Datasets, preprocessing, baselines, pretrained weights, experiment results and internal reports are not included.
