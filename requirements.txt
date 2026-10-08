@@ -1,0 +1,5 @@
+torch==2.0.1
+numpy==1.26.4
+scikit-learn==1.7.2
+mamba-ssm==1.2.0.post1
+causal-conv1d==1.2.0.post2
